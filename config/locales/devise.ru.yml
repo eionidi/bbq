@@ -1,0 +1,7 @@
+ru:
+  devise:
+    registration:
+      title: 'Регистрация'
+      submit: 'Зарегистрироваться'
+    session:
+      sign_in: 'Войти'
