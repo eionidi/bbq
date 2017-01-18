@@ -5,8 +5,8 @@ class Event < ActiveRecord::Base
   # событие всегда принадлежит юзеру
   belongs_to :user
   has_many :comments
-  has_many :subscriptions, :dependent => :delete_all
-  has_many :subscribers, through: :subscriptions, source: :user, :dependent => :delete_all
+  # has_many :subscriptions, :dependent => :delete_all
+#   has_many :subscribers, through: :subscriptions, source: :user, :dependent => :delete_all
 
   # юзера не может не быть
   validates :user, presence: true
