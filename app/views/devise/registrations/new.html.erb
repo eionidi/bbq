@@ -24,7 +24,9 @@
       </div>
 
       <div class="actions" buffer-bottom">
-        <%= f.submit "#{ t('devise.registration.submit')}", class: "btn btn-primary" %>
+        <div class="col-sm-offset-2 col-sm-6">
+          <%= f.submit "#{ t('devise.registration.submit')}", class: "btn btn-primary" %>
+        </div>
       </div>
     <% end %>
   </div>
