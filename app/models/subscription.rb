@@ -42,7 +42,7 @@ class Subscription < ActiveRecord::Base
   private
   
   def user_email_exist
-    if user.nil? && User.find_by_email(user_email).present?
+    if user.nil? && User.exists?(email: user_email)
       errors.add(:empty, I18n.t('controllers.subscription.error_exist_email'))
     end
   end
