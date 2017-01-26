@@ -18,6 +18,14 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    # Болванка модели для формы добавления комментария
+    @new_comment = @event.comments.build(params[:comment])
+
+    # Болванка модели для формы подписки
+    @new_subscription = @event.subscriptions.build(params[:subscription])
+
+    # Болванка модели для формы добавления фотографии
+    @new_photo = @event.photos.build(params[:photo])
   end
 
   # GET /events/new
@@ -34,7 +42,9 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      redirect_to @event, notice: 'Event was successfully created.'
+      # Используем сообщение из файла локалей ru.yml
+      # controllers -> events -> created
+      redirect_to @event, notice: I18n.t('controllers.events.created')
     else
       render :new
     end
@@ -43,7 +53,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   def update
     if @event.update(event_params)
-      redirect_to @event, notice: 'Event was successfully updated.'
+      redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
       render :edit
     end
@@ -52,7 +62,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   def destroy
     @event.destroy
-    redirect_to events_url, notice: 'Event was successfully destroyed.'
+    redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
   end
 
   private

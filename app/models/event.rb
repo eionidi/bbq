@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   has_many :comments
   has_many :subscriptions, :dependent => :delete_all
   has_many :subscribers, through: :subscriptions, source: :user, :dependent => :delete_all
+  has_many :photos
 
   # юзера не может не быть
   validates :user, presence: true
@@ -17,6 +18,9 @@ class Event < ActiveRecord::Base
   validates :address, presence: true
   validates :datetime, presence: true
 
-
+  # Метод, который возвращает всех, кто пойдет на событие:
+  # всех подписавшихся и организатора
+  def visitors
+    (subscribers + [user]).uniq
+  end
 end
-

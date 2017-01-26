@@ -11,6 +11,7 @@ ru:
       user:
         email: 'Email'
         name: 'Имя'
+        avatar: 'Аватарка'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
       event:
@@ -22,6 +23,10 @@ ru:
         user_name: 'Имя'
         user_email: 'Email'
         empty: ''
+      photos:
+        error: 'Что-то не так с фоткой'
+        created: 'Вы добавили фотографию к событию'
+        destroyed: 'Вы удалили фотку'
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:

@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   # при создании нового юзера (create), перед валидацией объекта выполнить метод set_name
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
+  
+  mount_uploader :avatar, AvatarUploader
 
   private
 

@@ -20,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 # для поддержки jquery
 gem 'jquery-rails'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 # в продакшен сервере heroku этот гем соединяет с базой данных Postgres
 group :production do
   gem 'pg'
