@@ -24,5 +24,13 @@ class ApplicationController < ActionController::Base
         # пробуем у модели взять .event и если он есть, проверяем его юзера
         (model.try(:event).present? && model.event.user == current_user))
   end
+  
+  def notify_subscribers(event, comment)
+    all_emails = (event.subscriptions.map{|s| s.user_name unless s.user == notification.user} + [event.user.email]).compact
+    all_emails.each do |mail|
+      method_name = notification.class.name.downcase
+      EventMailer.comment(event, comment, mail).deliver_now
+    end
+  end
 
 end
