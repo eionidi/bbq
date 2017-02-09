@@ -16,6 +16,7 @@ gem 'russian'
 gem 'twitter-bootstrap-rails'
 
 gem 'uglifier', '>= 1.3.0'
+gem 'sqlite3'
 
 # для поддержки jquery
 gem 'jquery-rails'
@@ -31,7 +32,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  #gem 'sqlite3'
   gem 'byebug'
 end
 
