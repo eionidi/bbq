@@ -11,12 +11,12 @@ class EventsController < ApplicationController
   # задаем объект @event от текущего юзера
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
+  before_action :password_guard!, only: [:show]
+  
   # GET /events
   def index
     @events = Event.all
   end
-  
-  before_action :password_guard!, only: [:show]
 
   # GET /events/1
   def show
