@@ -24,6 +24,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
 
+
 # в продакшен сервере heroku этот гем соединяет с базой данных Postgres
 group :production do
   gem 'pg'

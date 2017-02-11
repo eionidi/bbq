@@ -43,6 +43,11 @@
         <div class="event-photos-gallery">
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
+        
+        <%# Кнопка вывода формы добавления фотографии %>
+        <div class="buffer-both">
+          <%= link_to "Добавить фото", '#', class: 'event-photo-form-link' %>
+        </div>
 
         <%# Рисуем форму для добавления новой фотографии %>
         <div class="event-photo-form">
