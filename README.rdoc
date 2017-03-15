@@ -10,6 +10,20 @@
 
 При желании может быть взято за основу для полезного и серьезного проекта.
 
+== Launch app
+
+```
+$ bundle
+```
+
+```
+$ bundle exec rake db:migrate
+```
+
+```
+rails s
+```
+
 
 == Copyright
 
