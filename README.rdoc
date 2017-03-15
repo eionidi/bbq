@@ -12,17 +12,14 @@
 
 == Launch app
 
-```
-$ bundle
-```
+    $ bundle
+        
 
-```
-$ bundle exec rake db:migrate
-```
+    $ bundle exec rake db:migrate
+    
 
-```
-rails s
-```
+    $ rails s
+    
 
 
 == Copyright
